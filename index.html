@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       
+</head>
+<body>
+    <div class="container-fluid">
+            <div class="jumbotron jumbotron-fluid text-center">
+                    <div class="container">
+                      <h1 class="display-4">Psychic Game</h1>
+                    </div>
+            <div class="row">
+                <h2>What letter am I thinking?</h2>
+                <textarea id="userGuess"> </textarea>
+            </div>
+            <div class="row">
+                <h2>Wins:</h2>
+            </div>
+            <div class="row">
+                <h2>Losses:</h2>
+            </div>
+            <div class="row">
+                <h2>Remaining Chances:</h2>
+            </div>
+            <div class="row">
+                <h2>Letters Selected:</h2>
+            </div>
+    </div>
+        
+            
+
+    <script>
+
+
+alert("Guess what letter Im thinking?")
+
+var character = ['a','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+let remainderCounter = character.length
+
+var winScore = 0;
+var lossScore = 0;
+var guessRemaining = 9; 
+var userGuess = event.key;
+
+var randomIndex= Math.floor(Math.random() * character.length);
+var cpuRandomLetter= character[randomIndex];
+console.log(cpuRandomLetter)
+alert(randomLetter)
+document.element.innerHTML
+
+for(i = 0;i<9, i++){
+    if(randomLetter == userGuess){
+        add(1 + winScore)
+    } else if {
+        add(1 + guessRemaining)
+    }
+}
+
+
+    
+
+
+          
+          
+                
+        </script>
+    </div>
+   
+    
+</body>
+</html>
