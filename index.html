@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Psychic Game</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-       
 </head>
 <body>
     <div class="container-fluid">
@@ -17,62 +16,27 @@
                     </div>
             <div class="row">
                 <h2>What letter am I thinking?</h2>
-                <textarea id="userGuess"> </textarea>
+                <input id="userGuess"></input>
+                <button id="submit">OK</button>
             </div>
             <div class="row">
                 <h2>Wins:</h2>
+                <p id="winScore"></p>
             </div>
             <div class="row">
                 <h2>Losses:</h2>
+                <p id="lossScore"></p>
             </div>
             <div class="row">
-                <h2>Remaining Chances:</h2>
+                <h2>Guesses Left:</h2>
+                <p id="guessRemaining"></p>
             </div>
             <div class="row">
-                <h2>Letters Selected:</h2>
+                <h2>Your Guesses so far:</h2>
+                <input type="text" id="guessedLetters" onkeyup="myFunction()"> </input>
             </div>
     </div>
-        
             
-
-    <script>
-
-
-alert("Guess what letter Im thinking?")
-
-var character = ['a','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-
-let remainderCounter = character.length
-
-var winScore = 0;
-var lossScore = 0;
-var guessRemaining = 9; 
-var userGuess = event.key;
-
-var randomIndex= Math.floor(Math.random() * character.length);
-var cpuRandomLetter= character[randomIndex];
-console.log(cpuRandomLetter)
-alert(randomLetter)
-document.element.innerHTML
-
-for(i = 0;i<9, i++){
-    if(randomLetter == userGuess){
-        add(1 + winScore)
-    } else if {
-        add(1 + guessRemaining)
-    }
-}
-
-
-    
-
-
-          
-          
-                
-        </script>
-    </div>
-   
     
 </body>
 </html>
