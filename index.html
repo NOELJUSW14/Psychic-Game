@@ -7,6 +7,7 @@
     <title>Psychic Game</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./assets/javascript/game.js" rel="javascript"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -16,27 +17,31 @@
                     </div>
             <div class="row">
                 <h2>What letter am I thinking?</h2>
-                <input id="userGuess"></input>
-                <button id="submit">OK</button>
             </div>
             <div class="row">
-                <h2>Wins:</h2>
-                <p id="winScore"></p>
+                <div class="col-md-6"><h2>Wins:</h2></div>
+                <div class="col-md-6">
+                    <p id="winScore">0</p>
+                </div>
             </div>
             <div class="row">
-                <h2>Losses:</h2>
-                <p id="lossScore"></p>
+                <div class="col-md-6"><h2>Losses:</h2></div>
+                <div class="col-md-6">
+                    <p id="lossScore">0</p>
+                </div> 
             </div>
             <div class="row">
-                <h2>Guesses Left:</h2>
-                <p id="guessRemaining"></p>
+                <div class="col-md-6"><h2>Guesses Left:</h2></div>
+                <div class="col-md-6">
+                    <p id="guessRemaining" class="counter">9</p>
+                </div>
             </div>
             <div class="row">
-                <h2>Your Guesses so far:</h2>
-                <input type="text" id="guessedLetters" onkeyup="myFunction()"> </input>
+                <div class="col-md-6"><h2>Your Guesses so far:</h2></div>
+                <div class="col-md-6">
+                    <p type="text" id="guessedLetters" class="counter"> </p>
+                </div>
             </div>
     </div>
-            
-    
 </body>
 </html>
