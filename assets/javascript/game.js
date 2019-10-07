@@ -3,14 +3,16 @@ alert("Guess what letter I'm thinking?")
 var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 //Game set up
-var winScore = 0;
-var lossScore = 0;
-var guessRemaining = 9;
+var winScore = 1;
+var lossScore = 1;
+var guessRemaining = 8;
 var guessedLetters = [];
 let reset = function(){
-  guessesRemaining = 9;
+  guessesRemaining = 8;
   guessedLetters = [];
   console.log(cpuRandomLetter)
+  document.getElementById(`guessRemaining`).innerHTML = guessRemaining;
+  document.getElementById("guessedLetters").innerHTML = guessedLetters;
 }
 
 //Random Letter Generator
@@ -19,26 +21,28 @@ var cpuRandomLetter= alphabet[randomIndex];
 console.log(cpuRandomLetter)
 
 //WinScore,LossScore, GuessRemaining
-document.onkeydown = function(event) {
+document.onkeydown = function(event) {       
   var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+  if(alphabet.indexOf(userGuess) === -1){
+    alert('Select a letter please!!!')
+    return
+  }
   
   if(userGuess===cpuRandomLetter){
     document.getElementById(`winScore`).innerHTML = winScore++;
-    document.getElementsByClassName("counter").innerHTML = reset;
+    reset();
     alert("Wow! You're Psychic!")
     
   } else{
-    for( i=0; i>9; i++);
     document.getElementById(`guessRemaining`).innerHTML = guessRemaining--;
     alert("Try again!");
-    document.getElementById("guessedLetters").innerHTML = guessedLetters;
     guessedLetters.push(userGuess);
-    
+    document.getElementById("guessedLetters").innerHTML = guessedLetters;
   }
 
-  if(guessRemaining >= 0){
-    document.getElementById(lossScore).innerHTML = lossScore++;
-    document.getElementsByClassName("counter").innerHTML = reset;
+  if(guessRemaining <= -1){
+    document.getElementById(`lossScore`).innerHTML = lossScore++;
+    reset();
     alert("Start Over.")
   }
 }
