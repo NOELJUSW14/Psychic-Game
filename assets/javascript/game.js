@@ -30,8 +30,12 @@ document.onkeydown = function(event) {
   
   if(userGuess===cpuRandomLetter){
     document.getElementById(`winScore`).innerHTML = winScore++;
-    reset();
     alert("Wow! You're Psychic!")
+  guessesRemaining = 8;
+  guessedLetters = [];
+  console.log(cpuRandomLetter)
+  document.getElementById(`guessRemaining`).innerHTML = guessRemaining;
+  document.getElementById("guessedLetters").innerHTML = guessedLetters;
     
   } else{
     document.getElementById(`guessRemaining`).innerHTML = guessRemaining--;
@@ -42,10 +46,14 @@ document.onkeydown = function(event) {
 
   if(guessRemaining <= -1){
     document.getElementById(`lossScore`).innerHTML = lossScore++;
-    reset();
+  guessesRemaining = 8;
+  guessedLetters = [];
+  console.log(cpuRandomLetter)
+  document.getElementById(`guessRemaining`).innerHTML = guessRemaining;
+  document.getElementById("guessedLetters").innerHTML = guessedLetters;
+}
     alert("Start Over.")
   }
-}
 
 //document.getElementById('submit').onclick=function(){
   //  console.log("click")
