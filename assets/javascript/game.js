@@ -3,22 +3,29 @@ alert("Guess what letter I'm thinking?")
 var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 //Game set up
-var winScore = 1;
-var lossScore = 1;
+var winScore = 0;
+var lossScore = 0;
 var guessRemaining = 8;
-var guessedLetters = [];
-let reset = function(){
-  guessesRemaining = 8;
-  guessedLetters = [];
-  console.log(cpuRandomLetter)
-  document.getElementById(`guessRemaining`).innerHTML = guessRemaining;
-  document.getElementById("guessedLetters").innerHTML = guessedLetters;
-}
+var guessedLetters = [ ];
+var randomIndex= Math.floor(Math.random() * alphabet.length);
+var cpuRandomLetter = alphabet[randomIndex];
+console.log(cpuRandomLetter)
 
 //Random Letter Generator
-var randomIndex= Math.floor(Math.random() * alphabet.length);
-var cpuRandomLetter= alphabet[randomIndex];
+
+let startUp = function(){
+randomIndex= Math.floor(Math.random() * alphabet.length);
+cpuRandomLetter = alphabet[randomIndex];
+winScore = 0;
+lossScore = 0;
+guessRemaining = 8;
+guessedLetters = [ ];
+
+document.getElementById("guessedLetters").innerHTML = guessedLetters;
+document.getElementById("guessRemaining").innerHTML = guessRemaining;
+
 console.log(cpuRandomLetter)
+}
 
 //WinScore,LossScore, GuessRemaining
 document.onkeydown = function(event) {       
@@ -31,11 +38,7 @@ document.onkeydown = function(event) {
   if(userGuess===cpuRandomLetter){
     document.getElementById(`winScore`).innerHTML = winScore++;
     alert("Wow! You're Psychic!")
-  guessesRemaining = 8;
-  guessedLetters = [];
-  console.log(cpuRandomLetter)
-  document.getElementById(`guessRemaining`).innerHTML = guessRemaining;
-  document.getElementById("guessedLetters").innerHTML = guessedLetters;
+  startUp()
     
   } else{
     document.getElementById(`guessRemaining`).innerHTML = guessRemaining--;
@@ -46,13 +49,10 @@ document.onkeydown = function(event) {
 
   if(guessRemaining <= -1){
     document.getElementById(`lossScore`).innerHTML = lossScore++;
-  guessesRemaining = 8;
-  guessedLetters = [];
-  console.log(cpuRandomLetter)
-  document.getElementById(`guessRemaining`).innerHTML = guessRemaining;
-  document.getElementById("guessedLetters").innerHTML = guessedLetters;
+    alert("Sorry! You Lost!")
+  startUp()
 }
-    alert("Start Over.")
+
   }
 
 //document.getElementById('submit').onclick=function(){
